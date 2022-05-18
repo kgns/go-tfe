@@ -1300,6 +1300,13 @@ func skipIfBeta(t *testing.T) {
 	}
 }
 
+// skips a test if the test requires an organization token
+func skipIfNoOrgToken(t *testing.T) {
+	if !orgTokenExists() {
+		t.Skip("Skipping test that requires an organization token")
+	}
+}
+
 // Checks to see if ENABLE_TFE is set to 1, thereby enabling enterprise tests.
 func enterpriseEnabled() bool {
 	return os.Getenv("ENABLE_TFE") == "1"
@@ -1312,4 +1319,9 @@ func paidFeaturesDisabled() bool {
 // Checks to see if ENABLE_BETA is set to 1, thereby enabling tests for beta features.
 func betaFeaturesEnabled() bool {
 	return os.Getenv("ENABLE_BETA") == "1"
+}
+
+// Checks to see if TFE_ORGANIZATION_TOKEN is not empty, thereby enabling tests that require an organization token.
+func orgTokenExists() bool {
+	return os.Getenv("TFE_ORGANIZATION_TOKEN") != ""
 }
