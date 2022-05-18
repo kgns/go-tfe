@@ -1,4 +1,9 @@
-# v1.2.0 (Unreleased)
+# v1.3.0
+
+## Enhancements
+* Add support for Audit Trail API by @sebasslash [#407](https://github.com/hashicorp/go-tfe/pull/407)
+
+# v1.2.0
 
 ## Enhancements
 * Adds support for reading current state version outputs to StateVersionOutputs, which can be useful for reading outputs when users don't have the necessary permissions to read the entire state by @brandonc [#370](https://github.com/hashicorp/go-tfe/pull/370)
