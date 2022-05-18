@@ -10,6 +10,10 @@ If you are making relevant changes that is worth communicating to our users, ple
 
 CHANGELOG.md should have the next minor version listed as `# v1.X.0 (Unreleased)` and any changes can go under there. But if you feel that your changes are better suited for a patch version (like a critical bug fix), you may list a new section for this version. You should repeat the same formatting style introduced by previous versions.
 
+### Scoping pull requests that add new resources 
+
+There are instances where several new resources being added (i.e Workspace Run Tasks and Organization Run Tasks) are coalesced into one PR. In order to keep the review process as efficient and least error prone as possible, we ask that you please scope each PR to an individual resource even if the multiple resources you're adding share similarities. If submitting multiple PRs, please ensure to mention which PR depends on which in order to help the reviewers. 
+
 ## Running the Linters Locally
 
 1. Ensure you have have [installed golangci-lint](https://golangci-lint.run/usage/install/#local-installation)
